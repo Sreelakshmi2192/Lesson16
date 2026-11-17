@@ -51,7 +51,7 @@ test('check error on order creation', async ({}) => {
   await orderCreationPage.usernameInput.fill('s')
   await orderCreationPage.phoneInput.fill('12345')
   await orderCreationPage.commentInput.fill('leave in front of door')
-//checks
+  //checks
   await expect(orderCreationPage.createOrderButton).toBeDisabled()
   //errors
   await expect(orderCreationPage.customerNamerError).toBeVisible()
@@ -66,14 +66,14 @@ test('logout from order page', async ({}) => {
   //checks
   await expect(loginPage.signInButton).toBeVisible()
   await expect(orderCreationPage.logoutButton).toBeHidden()
-expect(loginPage.url).toContain('signin')
+  expect(loginPage.url).toContain('signin')
 })
 
 test('order not found page', async ({}) => {
   // lets create an order
   const orderCreationPage = await loginPage.signIn(USERNAME, PASSWORD)
 
- await orderCreationPage.statusButton.click()
+  await orderCreationPage.statusButton.click()
   await orderCreationPage.searchOrderInput.fill('250000')
   await orderCreationPage.searchOrderButton.click()
   //checks

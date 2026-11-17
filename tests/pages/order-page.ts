@@ -19,7 +19,6 @@ export class OrderPage {
   readonly orderNameDetails: Locator
   readonly orderStatusOpen: Locator
 
-
   // add more locators here
 
   constructor(page: Page) {
