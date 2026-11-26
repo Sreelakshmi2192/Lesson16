@@ -79,7 +79,7 @@ test('logout from order page', async ({}) => {
 test('order not found page', async ({}) => {
   // lets create an order
   const orderCreationPage = await loginPage.signIn(USERNAME, PASSWORD)
-//init mock
+  //init mock
   await nonExistingOrderMock(orderCreationPage.page)
   await orderCreationPage.statusButton.click()
   await orderCreationPage.searchOrderInput.fill('0')
@@ -92,7 +92,7 @@ test('order not found page', async ({}) => {
 test('order found page', async ({}) => {
   // lets create an order
   const orderCreationPage = await loginPage.signIn(USERNAME, PASSWORD)
-//init mock before flow started
+  //init mock before flow started
   await existingOrderMock(orderCreationPage.page)
   await orderCreationPage.statusButton.click()
   await orderCreationPage.searchOrderInput.fill('0')
@@ -105,12 +105,11 @@ test('order found page', async ({}) => {
 test('order search => error on server side', async ({}) => {
   // lets create an order
   const orderCreationPage = await loginPage.signIn(USERNAME, PASSWORD)
-//init mock before flow started
+  //init mock before flow started
   await serverErrorOrderMock(orderCreationPage.page)
   await orderCreationPage.statusButton.click()
   await orderCreationPage.searchOrderInput.fill('0')
   await orderCreationPage.searchOrderButton.click()
-
 })
 
 test('successful order creation with mock', async ({}) => {
